@@ -22,7 +22,5 @@ cask "alt-tab" # Windows alt-tab for macOS
 cask "flameshot"  # Screenshots
 #cask "iterm2" # 'Terminal' replacement; download via 'Self-Service'
 cask "linearmouse" # Mouse improvement
-cask "amethyst" # Window management
-#cask "rectangle" # Window management
-#alt wm 'loop' 'swish' 'amethyst'
+cask "amethyst" # Tiling Window management
 #cask "visual-studio-code"
