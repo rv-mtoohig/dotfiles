@@ -11,6 +11,7 @@ brew "gh" # Github CLI
 brew "lazygit" # TUI git
 brew "neovim" # 'vim' replacement
 brew "ripgrep" # 'grep' replacement
+brew "fd" # 'find' replacement
 brew "starship" # Prompt manager
 brew "tree" # Directory listing
 brew "wget2" # 'wget' replacement
