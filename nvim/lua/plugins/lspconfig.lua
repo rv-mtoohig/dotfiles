@@ -1,8 +1,22 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {},
-  ---@class PluginLspOpts
-  opts = {
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {},
+    -- @class PluginLspOpts
+    opts = function()
+      -- Add keymap for inc-rename plugin
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = {
+        "<leader>cr",
+        function()
+          local inc_rename = require("inc_rename")
+          return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
+        end,
+        expr = true,
+        desc = "Rename (inc-rename.nvim)",
+        has = "rename",
+      }
+    end,
     servers = {
       "graphql", -- required for graphql-lsp
     },
