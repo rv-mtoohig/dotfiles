@@ -65,8 +65,8 @@ alias ip='ifconfig | grep "inet "'
 #alias ip='echo "Local ips:" && ifconfig | grep "inet " | awk '\''{printf "\t%s\n", $2}'\'' && echo "External ip:" && curl -s ipinfo.io/ip | awk '\''{printf "\t%s\n", $0}'\'';'
 
 # AWS Aliases
-alias hssdev='export AWS_PROFILE=hss-dev'
-alias hssprod='export AWS_PROFILE=hss-prod'
+alias hssdev='export AWS_PROFILE=pu-hss-np'
+alias hssprod='export AWS_PROFILE=dev-hss-prod'
 alias av='aws-vault exec ${AWS_PROFILE}'
 alias awslogin='aws sso login --profile ${AWS_PROFILE}'
 
