@@ -17,6 +17,9 @@ brew "tree" # Directory listing
 brew "wget2" # 'wget' replacement
 brew "jq"
 brew "go"
+brew "tfenv"
+brew "pipx"
+brew "pyenv"
 
 # GUI apps
 cask "alt-tab" # Windows alt-tab for macOS

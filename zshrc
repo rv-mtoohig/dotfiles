@@ -1,3 +1,5 @@
+export PATH=$PATH:/Users/mtoohig/work/is-scripts
+
 # Default ZSH Options
 setopt autocd              # change directory just by typing its name
 setopt interactivecomments # allow comments in interactive mode
@@ -15,6 +17,7 @@ source ~/.zsh/fancy-ctrl-z.zsh
 [[ -f ~/.zsh/functions.zsh ]] && source ~/.zsh/functions.zsh
 [[ -f ~/.zsh/homebrew.zsh ]] && source ~/.zsh/homebrew.zsh
 [[ -f ~/.zsh/nvm.zsh ]] && source ~/.zsh/nvm.zsh
+[[ -f ~/.zsh/pyenv.zsh ]] && source ~/.zsh/pyenv.zsh
 
 autoload -Uz +X compinit && compinit
 
@@ -26,3 +29,7 @@ export BAT_THEME=ansi
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+eval "$(register-python-argcomplete pipx)"
+
+# Created by `pipx` on 2024-10-09 19:31:06
+export PATH="$PATH:/Users/mtoohig/.local/bin"

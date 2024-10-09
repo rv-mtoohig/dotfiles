@@ -56,3 +56,14 @@ Set config file for amethyst tiling window manager.
 ```
 ln -s ~/.dotfiles/amethyst.yml ~/.amethyst.yml
 ```
+
+### Python - Pyenv, Pipx & Poetry
+
+Pipx will be installed via Brew.
+Follow instructions on pipx and poetry websites to complete installation.
+
+```
+pipx ensurepath
+pipx install argcomplete
+pipx install poetry
+```
