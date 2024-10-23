@@ -11,3 +11,10 @@ vim.g.lazygit_floating_window_scaling_factor = 0.9 -- scaling factor for floatin
 vim.g.lazygit_floating_window_use_plenary = 1 -- use plenary.nvim to manage floating window if available
 -- TODO: investigate neovim-remote to allow editing commit messages in the neovim instance instead of a nano editor
 -- vim.g.lazygit_use_neovim_remote = 1
+
+vim.opt.title = true
+vim.opt.hlsearch = true
+vim.opt.wrap = false -- No wrap lines
+vim.opt.wildignore:append({ "*/node_modules/*" })
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current

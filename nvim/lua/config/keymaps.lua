@@ -11,6 +11,28 @@ local opts = { silent = true }
 -- local Lsp = require("utils.lsp")
 -- local Cmd = require("utils.cmd")
 
+-- New tab
+keymap("n", "te", ":tabedit")
+keymap("n", "<tab>", ":tabnext<Return>", opts)
+keymap("n", "<s-tab>", ":tabprev<Return>", opts)
+-- Split window
+keymap("n", "ss", ":split<Return>", opts)
+keymap("n", "sv", ":vsplit<Return>", opts)
+-- Move window
+keymap("n", "sh", "<C-w>h")
+keymap("n", "sk", "<C-w>k")
+keymap("n", "sj", "<C-w>j")
+keymap("n", "sl", "<C-w>l")
+-- Resize window
+-- keymap("n", "<A-j>", "<C-w><")
+-- keymap("n", "<A-k>", "<C-w>>")
+-- keymap("n", "<A-h>", "<C-w>+")
+-- keymap("n", "<A-l>", "<C-w>-")
+
+-- Increment/decrement
+keymap("n", "+", "<C-a>")
+keymap("n", "-", "<C-x>")
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
