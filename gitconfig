@@ -8,6 +8,8 @@
     status = auto
 [core]
     excludesfile = ~/.gitignore_global
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 
 # allow ~/.gitconfig.local to override anything (works with git 1.7.10+, which
 # means Ubuntu 14.04+) -- this needs to be the last thing in this file!
