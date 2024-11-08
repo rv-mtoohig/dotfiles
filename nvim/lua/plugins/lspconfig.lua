@@ -37,4 +37,47 @@ return {
     },
     setup = {},
   },
+  -- XXX: I'm not confident in this terraform config atm
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- pyright will be automatically installed with mason and loaded with lspconfig
+        terraformls = {},
+      },
+    },
+  },
+  -- XXX: again not confident multiple `nvim-lspconfig` is good idea
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        volar = {
+          init_options = {
+            vue = {
+              hybridMode = true,
+            },
+          },
+        },
+        vtsls = {},
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      table.insert(opts.servers.vtsls.filetypes, "vue")
+      LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
+        {
+          name = "@vue/typescript-plugin",
+          location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
+          languages = { "vue" },
+          configNamespace = "typescript",
+          enableForWorkspaceTypeScriptVersions = true,
+        },
+      })
+    end,
+  },
 }

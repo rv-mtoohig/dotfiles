@@ -7,7 +7,7 @@ return {
         "stylua",
         -- formatters
         "prettier",
-        "prettierd",
+        -- "prettierd",
         -- code spell
         "codespell",
         "misspell",
@@ -18,6 +18,8 @@ return {
         "solidity",
         -- GraphQL
         "graphql-language-service-cli", -- required for graphql-lsp
+        -- Terraform
+        "terraform-ls",
       },
     },
   },

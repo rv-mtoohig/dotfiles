@@ -19,6 +19,10 @@ return {
         "yaml",
 
         "graphql",
+        "hcl",
+        "terraform",
+        "vue",
+        "css",
       },
     },
   },

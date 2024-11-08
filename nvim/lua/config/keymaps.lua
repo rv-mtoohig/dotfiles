@@ -30,8 +30,8 @@ keymap("n", "sl", "<C-w>l")
 -- keymap("n", "<A-l>", "<C-w>-")
 
 -- Increment/decrement
-keymap("n", "+", "<C-a>")
-keymap("n", "-", "<C-x>")
+-- keymap("n", "+", "<C-a>")
+-- keymap("n", "-", "<C-x>")
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -57,3 +57,8 @@ keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 
 -- Show Lsp info
 keymap("n", "<leader>cl", "<cmd>LspInfo<CR>", opts)
+
+keymap("n", "<C-a>", "ggVG", {
+  desc = "Select all content",
+  silent = true,
+})

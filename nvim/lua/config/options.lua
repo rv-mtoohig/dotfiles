@@ -18,3 +18,6 @@ vim.opt.wrap = false -- No wrap lines
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
+
+-- Prettier
+vim.g.lazyvim_prettier_needs_config = true
