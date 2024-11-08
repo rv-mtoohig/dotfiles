@@ -30,6 +30,7 @@ alias wget='wget2'
 
 alias dnslookup="dig +noall +answer"
 
+alias lg='lazygit'
 alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
@@ -73,3 +74,11 @@ alias awslogin='aws sso login --profile ${AWS_PROFILE}'
 # NVM
 alias nvmlts='nvm use --lts'
 alias nvm18='nvm use 18'
+
+# Notes
+alias no="notes"
+alias na="notes-add"
+alias todo='notes TODO.md'
+alias todos='todo'
+alias np='notes-add scratchpad/$(date "+%Y-%m-%d").md'
+alias pad='np'
