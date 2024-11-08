@@ -18,6 +18,7 @@ source ~/.zsh/fancy-ctrl-z.zsh
 [[ -f ~/.zsh/homebrew.zsh ]] && source ~/.zsh/homebrew.zsh
 [[ -f ~/.zsh/nvm.zsh ]] && source ~/.zsh/nvm.zsh
 [[ -f ~/.zsh/pyenv.zsh ]] && source ~/.zsh/pyenv.zsh
+[[ -f ~/.zsh/notes.zsh ]] && source ~/.zsh/notes.zsh
 
 autoload -Uz +X compinit && compinit
 
