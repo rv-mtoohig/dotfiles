@@ -20,6 +20,7 @@ brew "go"
 brew "tfenv"
 brew "pipx"
 brew "pyenv"
+brew "k6"
 
 # GUI apps
 cask "alt-tab" # Windows alt-tab for macOS
@@ -28,3 +29,4 @@ cask "flameshot"  # Screenshots
 cask "linearmouse" # Mouse improvement
 cask "amethyst" # Tiling Window management
 #cask "visual-studio-code"
+#cask "kitty" # 'Terminal' replacement; download from script on website
