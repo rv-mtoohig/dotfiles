@@ -160,7 +160,7 @@ swap-cw:
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
-  mod: mod1
+  mod: mod2
   key: m
   # key: enter
 
