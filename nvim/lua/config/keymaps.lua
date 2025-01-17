@@ -23,11 +23,19 @@ keymap("n", "sh", "<C-w>h")
 keymap("n", "sk", "<C-w>k")
 keymap("n", "sj", "<C-w>j")
 keymap("n", "sl", "<C-w>l")
--- Resize window
--- keymap("n", "<A-j>", "<C-w><")
--- keymap("n", "<A-k>", "<C-w>>")
--- keymap("n", "<A-h>", "<C-w>+")
--- keymap("n", "<A-l>", "<C-w>-")
+--- Resize window
+keymap("n", "<leader><left>", ":vertical resize +20<cr>", { desc = "Virtual resize window +20" })
+keymap("n", "<leader><right>", ":vertical resize -20<cr>", { desc = "Virtual resize window -20" })
+keymap("n", "<leader><up>", ":resize +10<cr>", { desc = "Resize window +10" })
+keymap("n", "<leader><down>", ":resize -10<cr>", { desc = "Resize windown -10" })
+
+-- Center the screen after scrolling up/down with Ctrl-u/d
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-d>", "<C-d>zz")
+
+-- Center the screen on the next/prev search result with n/N
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
 
 -- Increment/decrement
 -- keymap("n", "+", "<C-a>")
@@ -47,6 +55,9 @@ keymap("n", "<A-l>", "$", {
   silent = true,
 })
 
+-- Move a blocks of text up/down with K/J in visual mode
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 -- Move line up or down
 keymap("n", "<A-Down>", ":m .+1<CR>", opts)
 keymap("n", "<A-Up>", ":m .-2<CR>", opts)
@@ -58,7 +69,34 @@ keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 -- Show Lsp info
 keymap("n", "<leader>cl", "<cmd>LspInfo<CR>", opts)
 
-keymap("n", "<C-a>", "ggVG", {
-  desc = "Select all content",
-  silent = true,
-})
+-- Select all
+keymap("n", "<C-a>", "ggVG", { silent = true, desc = "Select all content" })
+
+-- checkbox
+-- keymap("n", "<leader>ty", [[:s/\[\s\]/[x]/<cr>]], opts)
+-- keymap("n", "<leader>tu", [[:s/\[x\]/[ ]/<cr>]], opts)
+
+-- Toggle checkbox values
+function ToggleCheckbox()
+  -- Get the current line
+  local line = vim.api.nvim_get_current_line()
+
+  -- Check if line contains unchecked checkbox
+  if line:match("^%s*-%s*%[ %]") then
+    -- Replace unchecked with checked
+    local new_line = line:gsub("%[ %]", "[x]")
+    vim.api.nvim_set_current_line(new_line)
+
+    -- Check if line contains checked checkbox
+  elseif line:match("^%s*-%s*%[x%]") then
+    -- Replace checked with unchecked
+    local new_line = line:gsub("%[x%]", "[ ]")
+    vim.api.nvim_set_current_line(new_line)
+
+    -- If no checkbox, do nothing
+  else
+    print("No checkbox found on this line")
+  end
+end
+
+keymap("n", "<leader>ti", ToggleCheckbox, { noremap = true, silent = true, desc = "Checkbox Toggle" })

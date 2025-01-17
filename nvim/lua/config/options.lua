@@ -19,5 +19,10 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 
+vim.opt.scrolloff = 2 -- minimum number of lines to keep above and below the cursor
+vim.opt.sidescrolloff = 8 --minimum number of columns to keep above and below the cursor
+vim.opt.signcolumn = "yes" -- always show the sign column, to avoid text shifting when signs are displayed
+vim.opt.isfname:append("@-@") -- include '@' in the set of characters considered part of a file name
+
 -- Prettier
 vim.g.lazyvim_prettier_needs_config = true
