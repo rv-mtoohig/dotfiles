@@ -52,6 +52,8 @@ alias sc='source $HOME/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias sship='vim ~/.config/starship.toml'
 alias aliases='vim ~/.zsh/aliases.zsh'
+alias nvimrc='vim ~/.config/nvim/'
+alias vimrc='nvimrc'
 
 # Share current dir
 #alias pshare='python -m http.server 2121'
@@ -66,8 +68,8 @@ alias ip='ifconfig | grep "inet "'
 #alias ip='echo "Local ips:" && ifconfig | grep "inet " | awk '\''{printf "\t%s\n", $2}'\'' && echo "External ip:" && curl -s ipinfo.io/ip | awk '\''{printf "\t%s\n", $0}'\'';'
 
 # AWS Aliases
-alias hssdev='export AWS_PROFILE=pu-hss-np'
-alias hssprod='export AWS_PROFILE=dev-hss-prod'
+alias hssdev='export AWS_PROFILE=hss-nonprod'
+alias hssprod='export AWS_PROFILE=hss-prod'
 alias av='aws-vault exec ${AWS_PROFILE}'
 alias awslogin='aws sso login --profile ${AWS_PROFILE}'
 
@@ -80,5 +82,6 @@ alias no="notes"
 alias na="notes-add"
 alias todo='notes TODO.md'
 alias todos='todo'
-alias np='notes-add scratchpad/$(date "+%Y-%m-%d").md'
-alias pad='np'
+alias nt='notes-add tmp/$(date "+%Y-%m-%d").md'
+alias pad='nt'
+alias til='notes TIL.md'
