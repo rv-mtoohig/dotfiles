@@ -21,6 +21,7 @@ brew "tfenv"
 brew "pipx"
 brew "pyenv"
 brew "k6"
+brew "pgcli" # CLI for Postgres
 
 # GUI apps
 cask "alt-tab" # Windows alt-tab for macOS
