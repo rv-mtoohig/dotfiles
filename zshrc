@@ -10,6 +10,7 @@ setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
 # Plugins
+source ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 source ~/.zsh/fancy-ctrl-z.zsh
 
@@ -34,3 +35,6 @@ eval "$(register-python-argcomplete pipx)"
 
 # Created by `pipx` on 2024-10-09 19:31:06
 export PATH="$PATH:/Users/mtoohig/.local/bin"
+
+# Added by Windsurf
+export PATH="/Users/mtoohig/.codeium/windsurf/bin:$PATH"
