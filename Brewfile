@@ -22,6 +22,8 @@ brew "pipx"
 brew "pyenv"
 brew "k6"
 brew "pgcli" # CLI for Postgres
+brew "d2" # diagrams
+brew "task" # TaskWarrior
 
 # GUI apps
 cask "alt-tab" # Windows alt-tab for macOS
@@ -31,3 +33,5 @@ cask "linearmouse" # Mouse improvement
 cask "amethyst" # Tiling Window management
 #cask "visual-studio-code"
 #cask "kitty" # 'Terminal' replacement; download from script on website
+cask "ghostty" # Another 'Terminal' replacement; low expectations
+cask "homerow" # VIM-like keys for all MacOS windws
