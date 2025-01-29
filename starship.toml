@@ -29,7 +29,7 @@ Unknown = '󰠥'
 
 # Shows the username
 [username]
-format = '[//](black bold) [$user]($style) '
+format = '[//](grey dimmed) [$user]($style) '
 disabled = false
 show_always = true
 style_user = 'yellow bold'
@@ -37,7 +37,7 @@ style_user = 'yellow bold'
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = '[//](black bold) [$hostname]($style) '
+format = '[//](grey dimmed) [$hostname]($style) '
 disabled = false
 style = 'yellow bold'
 
@@ -48,7 +48,7 @@ truncation_symbol = '…/'
 home_symbol = '~'
 # read_only_style = '197'
 read_only = '  '
-format = '[//](black bold) [$path]($style)[$read_only]($read_only_style) '
+format = '[//](grey dimmed) [$path]($style)[$read_only]($read_only_style) '
 style = '#7ed1fb' # yellow bold
 
 
@@ -56,7 +56,7 @@ style = '#7ed1fb' # yellow bold
 [git_branch]
 # symbol = ' '
 symbol = ' '
-format = '[//](black bold) [$symbol\[$branch\]]($style) '
+format = '[//](grey dimmed) [$symbol\[$branch\]]($style) '
 # truncation_length = 0
 # truncation_symbol = '…/'
 style = 'bold green'
