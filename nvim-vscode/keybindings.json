@@ -1,0 +1,31 @@
+// An manual copy of my current keybindings from VSCode... this is not an ideal way to preserve these settings
+[
+  { "key": "ctrl+h", "command": "workbench.action.navigateLeft" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateRight" },
+  { "key": "ctrl+j", "command": "workbench.action.navigateDown" },
+  { "key": "ctrl+k", "command": "workbench.action.navigateUp" },
+  {
+    "key": "tab",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.togglePanel",
+  },
+  {
+    "key": "s v",
+    "command": "workbench.action.splitEditorToRightGroup",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'",
+  },
+  {
+    "key": "s h",
+    "command": "workbench.action.splitEditorToBelowGroup",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'",
+  },
+]
