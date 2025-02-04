@@ -30,7 +30,9 @@ alias wget='wget2'
 
 alias dnslookup="dig +noall +answer"
 
-alias lg='lazygit'
+alias lzd='lazydocker'
+alias lzg='lazygit'
+
 alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
@@ -68,7 +70,7 @@ alias ip='ifconfig | grep "inet "'
 #alias ip='echo "Local ips:" && ifconfig | grep "inet " | awk '\''{printf "\t%s\n", $2}'\'' && echo "External ip:" && curl -s ipinfo.io/ip | awk '\''{printf "\t%s\n", $0}'\'';'
 
 # AWS Aliases
-alias hssdev='export AWS_PROFILE=hss-nonprod'
+alias hssnp='export AWS_PROFILE=hss-nonprod'
 alias hssprod='export AWS_PROFILE=hss-prod'
 alias av='aws-vault exec ${AWS_PROFILE}'
 alias awslogin='aws sso login --profile ${AWS_PROFILE}'
@@ -85,3 +87,9 @@ alias todos='todo'
 alias nt='notes-add tmp/$(date "+%Y-%m-%d").md'
 alias pad='nt'
 alias til='notes TIL.md'
+
+# Database
+alias db='connect-db.sh dev'
+alias dbdev='db'
+alias dbstaging='connect-db.sh staging'
+alias dbprod='connect-db.sh prod'
