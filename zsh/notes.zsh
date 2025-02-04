@@ -20,20 +20,37 @@ function notes-add() {
   local notes_dir="$HOME/Notes"
 
   if [[ -z $1 ]]; then
-    echo "Usage: notes-add <filename>"
+    echo "Usage: notes-add \"My New Note\""
     return 1
   fi
 
-  local note_file="$notes_dir/$1"
+  local title="$1"
+  # Create slug from title: lowercase, replace spaces with hyphens, remove special chars
+  local basename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
+  local note_file="$notes_dir/$basename.md"
   local parent_dir=$(dirname "$note_file")
   if [[ ! -d $parent_dir ]]; then
     mkdir -p "$parent_dir"
   fi
 
-  # if [[ -f $note_file ]]; then
-  #   echo "Note '$note_file' already exists."
-  #   return 1
-  # fi
+  # Get current date in YYYY-MM-DD format
+  local today=$(date +%Y-%m-%d)
+
+  if [[ -f $note_file ]]; then
+    echo "Error: A note with title '$title' already exists at '$note_file'"
+    return 1
+  fi
+
+  # Create note with template
+  cat > "$note_file" << EOL
+---
+title: $title
+created: $today
+tags:
+---
+
+# $title
+EOL
 
   vim --cmd "cd $notes_dir" -- "$note_file"
 }
