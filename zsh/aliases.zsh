@@ -84,8 +84,10 @@ alias no="notes"
 alias na="notes-add"
 alias todo='notes TODO.md'
 alias todos='todo'
-alias nt='notes-add tmp/$(date "+%Y-%m-%d").md'
+alias nt='notes-add-tmp'
+alias nl='notes-add-lesson'
 alias pad='nt'
+alias lesson='nl'
 alias til='notes TIL.md'
 
 # Database

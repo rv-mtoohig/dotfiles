@@ -18,16 +18,21 @@ function notes() {
 
 function notes-add() {
   local notes_dir="$HOME/Notes"
+  local sub_dir=""
 
   if [[ -z $1 ]]; then
     echo "Usage: notes-add \"My New Note\""
     return 1
   fi
-
   local title="$1"
+
+  if [[ -n $2 ]]; then
+    sub_dir="/$2"
+  fi
+
   # Create slug from title: lowercase, replace spaces with hyphens, remove special chars
   local basename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
-  local note_file="$notes_dir/$basename.md"
+  local note_file="$notes_dir$sub_dir/$basename.md"
   local parent_dir=$(dirname "$note_file")
   if [[ ! -d $parent_dir ]]; then
     mkdir -p "$parent_dir"
@@ -49,8 +54,15 @@ created: $today
 tags:
 ---
 
-# $title
 EOL
 
   vim --cmd "cd $notes_dir" -- "$note_file"
+}
+
+function notes-add-tmp() {
+  notes-add "$(date '+%Y-%m-%d')" "tmp"
+}
+
+function notes-add-lesson() {
+  notes-add "$1" "lessons"
 }
