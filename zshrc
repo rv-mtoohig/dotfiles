@@ -31,10 +31,12 @@ export BAT_THEME=ansi
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
-eval "$(register-python-argcomplete pipx)"
+# eval "$(register-python-argcomplete pipx)"
 
 # Created by `pipx` on 2024-10-09 19:31:06
 export PATH="$PATH:/Users/mtoohig/.local/bin"
 
 # Added by Windsurf
 export PATH="/Users/mtoohig/.codeium/windsurf/bin:$PATH"
+
+export RAINFROG_EXPORT=~/Downloads/rainfrog-exports/

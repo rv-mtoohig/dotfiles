@@ -24,6 +24,9 @@ brew "k6"
 brew "pgcli" # CLI for Postgres
 brew "d2" # diagrams
 brew "task" # TaskWarrior
+brew "rainfrog"
+brew "curlie" # 'curl' replacement using httpie
+brew "atac" # Postman-like TUI
 
 # GUI apps
 cask "alt-tab" # Windows alt-tab for macOS
