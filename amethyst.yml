@@ -272,6 +272,8 @@ floating:
     "com.apple.finder",
     "com.apple.iWork.Numbers",
     "com.jetbrains.datagrip",
+    "com.amethyst.Amethyst",
+    "com.okta.mobile",
   ]
 
 # Boolean flag determining behavior of the floating list. true if the applications should be floating and all others tiled. false if the applications should be tiled and all others floating (default true).
