@@ -7,3 +7,11 @@ function ga.() {
     git add .
     git status
 }
+
+function b64decode() {
+  echo "$1" | base64 -d | tee >(pbcopy)
+}
+
+function b64encode() {
+  echo "$1" | base64 | tee >(pbcopy)
+}

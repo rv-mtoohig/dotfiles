@@ -24,7 +24,7 @@ alias cat='bat --paging=never'
 #alias gdu='gdu-go'
 #alias ptop='bpytop'
 alias disk='gdu'
-#alias grep='rg'
+alias grep='rg'
 #alias top='htop'
 alias wget='wget2'
 
@@ -72,8 +72,24 @@ alias ip='ifconfig | grep "inet "'
 # AWS Aliases
 alias hssnp='export AWS_PROFILE=hss-nonprod'
 alias hssprod='export AWS_PROFILE=hss-prod'
+alias codanp='export AWS_PROFILE=coda-nonprod'
+alias codaprod='export AWS_PROFILE=coda-prod'
 alias av='aws-vault exec ${AWS_PROFILE}'
 alias awslogin='aws sso login --profile ${AWS_PROFILE}'
+
+# Docker Aliases
+alias dockerstart='colima start'
+alias dockerlogin='aws --profile ${AWS_PROFILE} ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 089022728777.dkr.ecr.us-east-1.amazonaws.com'
+
+function openapi() {
+  local file
+  file=$(find . -maxdepth 1 -type f -name "*.json" | sed 's|^\./||' | fzf --prompt="Select OpenAPI file: ")
+  if [[ -n $file ]]; then
+    docker run --rm -ti -v$(pwd):/opt zaghaghi/openapi-tui -i /opt/$file
+  else
+    echo "No file selected."
+  fi
+}
 
 # NVM
 alias nvmlts='nvm use --lts'
@@ -95,3 +111,11 @@ alias db='connect-db.sh dev'
 alias dbdev='db'
 alias dbstaging='connect-db.sh staging'
 alias dbprod='connect-db.sh prod'
+alias tunnel='tunnel-db.sh dev'
+alias tunneldev='tunnel'
+alias tunnelstaging='tunnel-db.sh staging'
+alias tunnelprod='tunnel-db.sh prod'
+
+# Fun
+alias b64e='b64encode'
+alias b64d='b64decode'
