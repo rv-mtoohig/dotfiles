@@ -1,6 +1,10 @@
 # System files
 .DS_Store
 
+# My personal repo notes
+TODO.md
+NOTES.md
+
 # Text editor & IDE files
 .vscode/
 .idea/
