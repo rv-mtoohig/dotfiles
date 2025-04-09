@@ -37,6 +37,9 @@ alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
 
+alias deploy='repo-deploy.sh'
+alias deployed='repo-deployed.sh'
+
 alias ls='eza --group-directories-first --icons'
 alias ll='eza --group-directories-first --icons -lh'
 alias la='eza --group-directories-first --icons -a'
